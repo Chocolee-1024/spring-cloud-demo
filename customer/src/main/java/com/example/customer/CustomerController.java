@@ -1,6 +1,6 @@
 package com.example.customer;
 
-import com.example.base.BaseResponse;
+import com.example.request.BaseResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
