@@ -1,18 +1,26 @@
 server:
-  port: 8080
+  port: 8080  # 設置應用程式運行的端口號為8080
 
 spring:
   application:
-    name: customer
-  datasource:
-    password: 'eson1020'
-    url: jdbc:postgresql://localhost:5432/customers
-    username: 'postgres'
-  jpa:
+    name: customer  # 設置應用程式的名稱為 customer
+  datasource:  # 設置數據庫連接資訊
+    password: 'eson1020'  # 資料庫密碼
+    url: jdbc:postgresql://localhost:5432/customers  # 資料庫連接 URL
+    username: 'postgres'  # 資料庫使用者名稱
+
+  jpa:  # 配置 JPA 相關屬性
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create-drop  # 指定 Hibernate 的 ddl-auto 屬性為 create-drop，表示在啟動時創建 schema 並在關閉時丟棄
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    show-sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect  # 指定 Hibernate 的方言為 PostgreSQL
+        format_sql: true  # 將 SQL 語句格式化為易讀的形式
+    show-sql: true  # 在日誌中顯示 SQL 語句
+
+eureka:  # 配置 Eureka 客戶端相關屬性
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka  # Eureka 服務註冊中心的 URL
+    fetch-registry: true  # 指定是否從 Eureka 服務註冊中心檢索註冊的服務
+    register-with-eureka: true  # 指定是否向 Eureka 服務註冊中心註冊本服務

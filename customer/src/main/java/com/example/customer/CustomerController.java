@@ -19,6 +19,5 @@ public class CustomerController {
     @PostMapping("/register")
     public ResponseEntity<BaseResponse> registerCustomer(@RequestBody CustomerRegistrationRequest request) {
         return ResponseEntity.ok(customerService.registerCustomer(request));
-
     }
 }

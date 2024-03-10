@@ -1,4 +1,4 @@
-package com.example.customer;
+package com.example.lock;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,13 +14,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "_customer")
-public class Customer {
+@Table(name = "_check_account_cock")
+public class CheckAccountLock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-}
 
+    private Long id;
+    private Long customerId;
+    private Boolean isLock = false;
+}

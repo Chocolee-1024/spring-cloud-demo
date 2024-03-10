@@ -5,12 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * @author ChocoLee
+ * @author Choco Lee
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class CustomerApplication {
+public class CheckAccountLockApplication {
     public static void main(String[] args) {
-        SpringApplication.run(CustomerApplication.class, args);
+        SpringApplication.run(CheckAccountLockApplication.class, args);
     }
 }
