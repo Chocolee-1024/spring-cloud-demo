@@ -3,10 +3,10 @@ server:
 
 spring:
   application:
-    name: fraud
+    name: lock
   datasource:
     password: 'eson1020'
-    url: jdbc:postgresql://localhost:5432/lock
+    url: jdbc:postgresql://localhost:5435/lock
     username: 'postgres'
   jpa:
     hibernate:

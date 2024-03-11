@@ -1,18 +1,19 @@
 services:
-  postgres:
-    container_name: postgres
-    image: postgres
+  db:
+    container_name: postgresql
+    image: postgres:15.2-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: eson1020
       PGDATA: /data/postgres
-    volumes:
-      - postgres:/data/postgres
+      POSTGRES_DB: customers
+#    volumes:
+#      - postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - "5435:5432"
     networks:
-      - postgres
-    restart: unless-stopped
+      - backend
+    restart: always
 
   pgadmin:
     container_name: pgadmin
@@ -26,9 +27,14 @@ services:
     ports:
       - "5050:80"
     networks:
-      - postgres
+      - backend
     restart: unless-stopped
+    depends_on:
+      - db
 
 networks:
+  backend:
+
+volumes:
   postgres:
-    driver: bridge
+  pgadmin:
